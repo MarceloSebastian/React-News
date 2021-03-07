@@ -1,11 +1,12 @@
 import Form from "./components/Form";
 import Header from "./components/Header";
 import { useState, useEffect } from 'react';
+import NewsList from "./components/NewsList";
 
 function App() {
 
   const [ category, setCategory ] = useState('');
-  const [news, setNews] = useState([]);
+  const [ news, setNews ] = useState([]);
 
   useEffect(() => {
     
@@ -31,6 +32,10 @@ function App() {
       <div className="container white">
         <Form 
           setCategory={setCategory}
+        />
+
+        <NewsList 
+          news={news}
         />
       </div>
     </>
